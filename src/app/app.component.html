@@ -1,3 +1,19 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="sidenav" contentId="main">
+    <ion-content>
+      <div class="sidenav-header">
+        <div class="sidenav-header-bg">
+          <div class="sidenav-content">
+            <img src="../assets/itrack4pslogo.png" alt="">
+          </div>
+          <div class="sidenav-content-2">
+            <img src="../assets/ITrack4ps.png" alt="">
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main">
+    <!-- Content Here -->
+  </ion-router-outlet>
 </ion-app>

@@ -1,0 +1,33 @@
+*{
+  font-family: lato;
+}
+
+
+.sidenav-header-bg{
+  height: 80px;
+  width: 350px;
+  background-color: #007E94;
+  background:linear-gradient(90deg, #086f82, #006577);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidenav-content{
+  width: fit-content;
+  img{
+    margin-left: 1rem;
+    width: 3rem;
+  }
+}
+
+.sidenav-content-2{
+  width: fit-content;
+  img{
+    width: 10rem;
+  }
+}
+.ion-menu{
+  background-color: #006577;
+}

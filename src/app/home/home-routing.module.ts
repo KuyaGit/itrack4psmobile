@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'beneficiary-form',
+    loadChildren: () => import('./beneficiary-form/beneficiary-form.module').then( m => m.BeneficiaryFormPageModule)
   }
 ];
 
