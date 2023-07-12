@@ -8,9 +8,14 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'beneficiary-form',
+    path: 'beneficiary/form',
     loadChildren: () => import('./beneficiary-form/beneficiary-form.module').then( m => m.BeneficiaryFormPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profilesetting/profilesetting.module').then( m => m.ProfilesettingPageModule)
   }
+
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
-<ion-app>
-  <ion-menu menuId="sidenav" contentId="main">
+<ion-split-pane contentId="main-content" slot="start">
+  <ion-menu menuId="sidenav"contentId="main-content" type="overlay">
     <ion-content>
       <div class="sidenav-header">
         <div class="sidenav-header-bg">
@@ -11,9 +11,27 @@
           </div>
         </div>
       </div>
+      <ion-menu-toggle
+      class="sidenav"
+      autoHide="false"
+      *ngFor="let p of pages ; let i = index">
+      <ion-item
+        color="primary"
+        class="ion-padding-start"
+        lines="none"
+        details="false"
+        [routerLink]="[p.url]"
+        routerDirection="root">
+        <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+        <ion-label>{{ p.title }}</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
     </ion-content>
   </ion-menu>
-  <ion-router-outlet id="main">
+  <ion-router-outlet id="main-content">
     <!-- Content Here -->
   </ion-router-outlet>
-</ion-app>
+</ion-split-pane>
+
+
+

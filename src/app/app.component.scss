@@ -1,15 +1,12 @@
 *{
-  font-family: lato;
+  font-family: 'Roboto', sans-serif;
 }
 
-
+//Header Design
 .sidenav-header-bg{
   height: 80px;
-  width: 350px;
-  background-color: #007E94;
-  background:linear-gradient(90deg, #086f82, #006577);
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 }
@@ -28,6 +25,11 @@
     width: 10rem;
   }
 }
-.ion-menu{
-  background-color: #006577;
+//End Header Design
+
+
+//SideNav Design
+ion-menu ion-content{
+  --background: var(--ion-color-primary);
 }
+
