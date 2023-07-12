@@ -12,12 +12,11 @@
         </div>
       </div>
       <ion-menu-toggle
-      class="sidenav"
+      class="menu-items"
       autoHide="false"
       *ngFor="let p of pages ; let i = index">
       <ion-item
-        color="primary"
-        class="ion-padding-start"
+        class="nav"
         lines="none"
         details="false"
         [routerLink]="[p.url]"

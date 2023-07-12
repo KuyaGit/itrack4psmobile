@@ -11,8 +11,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public pages : any [] = [
-    {title: 'Form', url: '/home/beneficiary/form', icon: 'apps-outline'},
-    {title: 'Profile', url: '/home/profile', icon: 'person-circle-outline'},
+    {title: 'Form', url: '/home/beneficiary/form', icon: 'apps'},
+    {title: 'Profile Settings', url: '/home/profile', icon: "person-circle"},
   ];
   constructor() {}
 }
