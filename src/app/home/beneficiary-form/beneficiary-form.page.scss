@@ -1,0 +1,100 @@
+ion-content{
+  --background: var(--ion-color-primary);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 8px;
+
+}
+ion-title{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+ion-button{
+  --background-color: var(--ion-color-primary);
+}
+ion-menu-button{
+  color: #ffffff;
+}
+ion-content{
+  --background: var(--ion-color-primary);
+}
+
+ion-label{
+  color: #C1C1C1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+.login-content{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0px !important;
+}
+
+
+.login-form{
+  text-align: start;
+}
+ion-card{
+  border-radius: 40px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100%;
+  max-height: 915px;
+  opacity: 86%;
+}
+
+ion-list{
+  gap: 10px;
+}
+
+ion-input{
+  margin-top: 1rem;
+  margin-bottom: 2px;
+}
+ion-text{
+  display: flex;
+  justify-content: right;
+  font-size: small;
+}
+
+
+.sign-up{
+  color: #C1C1C1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 0px;
+}
+
+
+h2{
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #5c5c5c;
+  font-weight: bold;
+  margin: -10px;
+  margin-top: 1rem;
+  padding: 0;
+  align-items: left;
+
+}
+
+
+ion-card-header{
+  margin: 0px;
+}

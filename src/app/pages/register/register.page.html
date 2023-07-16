@@ -11,13 +11,15 @@
       </ion-label>
       <!-- Login Form -->
       <ion-list>
+        <ion-input type="text" label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
         <ion-input type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
         <ion-input type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
-        <ion-text>
+        <ion-input type="text" label="Household ID" label-placement="floating" fill="outline" placeholder="Enter your Household"></ion-input>
+        <ion-text routerLink="/forgot">
           Forgot Password?
         </ion-text>
       </ion-list>
-      <ion-button expand="block" routerLink="/home/beneficiary/form">Login</ion-button>
+      <ion-button expand="block" routerLink="/login">Create</ion-button>
       <ion-label class="sign-up">
         Already have an account?  <a routerLink="/login"> Login Here</a>
       </ion-label>
