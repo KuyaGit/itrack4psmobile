@@ -1,3 +1,11 @@
+.success{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+
+
 ion-content{
   --background: var(--ion-color-primary);
   margin-left: 1rem;
@@ -5,20 +13,7 @@ ion-content{
   margin-top: 8px;
 
 }
-ion-title{
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: #ffffff;
-}
-ion-button{
-  --background-color: var(--ion-color-primary);
-}
-ion-menu-button{
-  color: #ffffff;
-}
-ion-content{
-  --background: var(--ion-color-primary);
-}
+
 
 ion-label{
   color: #C1C1C1;
@@ -31,6 +26,7 @@ ion-label{
   margin-top: 30px;
   margin-bottom: 50px;
   padding: 10px;
+  --backgrounnd: white;
 }
 .login-content{
   display: block;
@@ -41,40 +37,24 @@ ion-label{
 }
 
 
-.login-form{
-  text-align: start;
-}
+
 ion-card{
   border-radius: 40px;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   max-height: 915px;
   opacity: 86%;
 }
-
-ion-list{
-  gap: 10px;
-}
-
-ion-input{
-  margin-top: 1rem;
-  margin-bottom: 2px;
-}
-ion-text{
-  display: flex;
-  justify-content: right;
-  font-size: small;
-}
-
-
-
 h2{
-  font-size: 20px;
+
   font-family: 'Roboto', sans-serif;
   color: #5c5c5c;
   font-weight: bold;
-  margin: -10px;
-  margin-top: 1rem;
-  padding: 0;
-  align-items: left;
-
+  text-align: center;
 }
+
+ion-card-content{
+  padding-bottom: 29px;
+}
+
+

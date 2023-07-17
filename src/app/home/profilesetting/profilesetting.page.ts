@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profilesetting.page.scss'],
 })
 export class ProfilesettingPage implements OnInit {
-
-  constructor() { }
-
+  formData: any = {};
+  newPassword: string = "";
+  confirmPassword: string ="";
+  constructor() {}
+  submit(){
+    if (this.newPassword !== this.confirmPassword) {
+      // Handle password mismatch error, display an error message, etc.
+      console.log('New password and confirmed password do not match.');
+      return;
+    }
+    console.log(this.formData);
+  }
   ngOnInit() {
   }
-
 }

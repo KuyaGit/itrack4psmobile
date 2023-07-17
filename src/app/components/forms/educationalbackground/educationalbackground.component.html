@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <h2>Educational Background</h2>
+    </ion-card-title>
+  </ion-card-header>
+    <!-- Login Form -->
+    <ion-list>
+      <ion-input type="text" [(ngModel)]="formData.name" label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
+      <ion-input type="email" [(ngModel)]="formData.email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address" ></ion-input>
+      <ion-input type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
+      <ion-input type="text" label="Household ID" label-placement="floating" fill="outline" placeholder="Enter your Household"></ion-input>
+
+      <ion-text routerLink="/forgot">
+        Forgot Password?
+      </ion-text>
+    </ion-list>
+    <ion-button expand="full" (click)="goToPreviousStep()">Back</ion-button>
+    <ion-button expand="full" (click)="goToNextStep()">Next</ion-button>
+  </ion-card>
+

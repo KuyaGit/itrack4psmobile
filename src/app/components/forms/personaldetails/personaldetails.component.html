@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <h2>Personal Details</h2>
+    </ion-card-title>
+  </ion-card-header>
+    <!-- Login Form -->
+    <ion-list>
+      <ion-input type="text" [(ngModel)]="formData.name"  label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
+    </ion-list>
+    <div class="birthgender">
+      <ion-input type="date" [(ngModel)]="formData.datebirth" label="Birthdate" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
+      <ion-select [(ngModel)]="formData.gender" placeholder="Gender">
+        <ion-select-option value="Male">Male</ion-select-option>
+        <ion-select-option value="Female">Female</ion-select-option>
+      </ion-select>
+    </div>
+    <ion-list>
+      <ion-input [(ngModel)]="formData.email" type="email" label="Email" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
+      <ion-input [(ngModel)]="formData.address" type="text" label="Address" label-placement="floating" fill="outline" placeholder="Enter your Address"></ion-input>
+      <ion-input [(ngModel)]="formData.fName" type="text" label="Father's Name" label-placement="floating" fill="outline" placeholder="Enter your Father's Name"></ion-input>
+      <ion-input [(ngModel)]="formData.mName" type="text" label="Mother's Name" label-placement="floating" fill="outline" placeholder="Enter your Mother's Name"></ion-input>
+    </ion-list>
+    <ion-button expand="full" (click)="goToNextStep()">Next</ion-button>
+  </ion-card>

@@ -10,11 +10,11 @@
       Let’s login for explore continues
       </ion-label>
       <!-- Login Form -->
-      <ion-list>
-        <ion-input type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
-        <ion-input type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
-        <ion-text routerLink="">
-          Forgot Password?
+      <ion-list [formGroup]="loginForm">
+        <ion-input formControlName="email" type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address" required></ion-input>
+        <ion-input formControlName="password" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
+        <ion-text>
+          <a routerLink="/forgot">Forgot Password?</a>
         </ion-text>
       </ion-list>
       <ion-button expand="block" routerLink="/home">Login</ion-button>

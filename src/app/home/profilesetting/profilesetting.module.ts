@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilesettingPageRoutingModule } from './profilesetting-routing.module';
 
 import { ProfilesettingPage } from './profilesetting.page';
+import { SuccessComponent } from 'src/app/components/forms/success/success.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilesettingPageRoutingModule
+    ProfilesettingPageRoutingModule,
+
   ],
   declarations: [ProfilesettingPage]
 })
