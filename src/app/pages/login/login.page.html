@@ -1,4 +1,5 @@
 <ion-content>
+
   <ion-card>
     <ion-card-header>
       <div class="login-content">
@@ -10,14 +11,25 @@
       Let’s login for explore continues
       </ion-label>
       <!-- Login Form -->
-      <ion-list [formGroup]="loginForm">
-        <ion-input formControlName="email" type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address" required></ion-input>
-        <ion-input formControlName="password" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
+
+      <ion-list >
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <!-- Email Form -->
+        <ion-input formControlName="email" type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
+        <div *ngIf="(loginForm.get('email').invalid && (loginForm.get('email')).touched) || (loginForm.get('email')).dirty">
+          <small *ngIf="(loginForm.get('email')).errors?.['required']">Email is required</small>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="(loginForm.get('email')).errors?.['pattern']">Please provide a valid email address</small>
+        </div>
+          <ion-input formControlName="password" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
         <ion-text>
           <a routerLink="/forgot">Forgot Password?</a>
         </ion-text>
+      </form>
       </ion-list>
-      <ion-button expand="block" routerLink="/home">Login</ion-button>
+
+      <ion-button expand="block" routerLink="/home" [disabled]="!loginForm.valid" type="submit">Login</ion-button>
+
       <ion-label class="sign-up">
         Don’t have an account?  <a routerLink="/register"> Sign Up</a>
       </ion-label>
