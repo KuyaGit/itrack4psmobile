@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { equivalentValidator } from './equivalent.validator';
 @Component({
   selector: 'app-profilesetting',
   templateUrl: './profilesetting.page.html',
   styleUrls: ['./profilesetting.page.scss'],
 })
 export class ProfilesettingPage implements OnInit {
-  formData: any = {};
-  newPassword: string = "";
-  confirmPassword: string ="";
+  @Output() nextStep: EventEmitter<any> = new EventEmitter<any>();
+
+  currentStep = 1;
+
   constructor() {}
-  submit(){
-    if (this.newPassword !== this.confirmPassword) {
-      // Handle password mismatch error, display an error message, etc.
-      console.log('New password and confirmed password do not match.');
-      return;
-    }
-    console.log(this.formData);
-  }
+
   ngOnInit() {
   }
+  goToStep1() {
+    this.currentStep = 1;
+  }
+
+  goToStep2(formData: any) {
+    this.currentStep = 2;
+  }
+  
 }

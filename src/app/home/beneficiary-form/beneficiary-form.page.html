@@ -12,9 +12,8 @@
   </ion-title>
   <ng-container [ngSwitch]="currentStep">
     <app-personaldetails *ngSwitchCase="1" (nextStep)="goToStep2($event)"></app-personaldetails>
-    <app-educationalbackground *ngSwitchCase="2" [formData]="formData" (previousStep)="goToStep1()" (nextStep)="goToStep3($event)"></app-educationalbackground>
-    <app-confirmation *ngSwitchCase="3" [formData]="formData" (previousStep)="goToStep2($event)" (nextStep)="goToStep4($event)"></app-confirmation>
-    <app-success *ngSwitchCase="4" [formData]="formData" (previousStep)="goToStep3($event)"></app-success>
+    <app-educationalbackground *ngSwitchCase="2"  (previousStep)="goToStep1()" (nextStep)="goToStep3($event)"></app-educationalbackground>
+    <app-success *ngSwitchCase="3"  (previousStep)="goToStep2($event)"></app-success>
 
   </ng-container>
 

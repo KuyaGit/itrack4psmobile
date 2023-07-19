@@ -4,18 +4,39 @@
       <h2>Educational Background</h2>
     </ion-card-title>
   </ion-card-header>
-    <!-- Login Form -->
     <ion-list>
-      <ion-input type="text" [(ngModel)]="formData.name" label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
-      <ion-input type="email" [(ngModel)]="formData.email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address" ></ion-input>
-      <ion-input type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
-      <ion-input type="text" label="Household ID" label-placement="floating" fill="outline" placeholder="Enter your Household"></ion-input>
-
-      <ion-text routerLink="/forgot">
-        Forgot Password?
-      </ion-text>
+      <form [formGroup]="form" (ngSubmit)="saveDetails()">
+      <!-- Educational Background -->
+      <ion-input type="text" formControlName="shs" label="Senior Highschool" label-placement="floating" fill="outline" placeholder="Enter your SHS"></ion-input>
+      <!-- Error Message -->
+        <small *ngIf="form.get('shs').invalid && (form.get('shs').dirty ||form.get('shs').touched )"></small>
+        <small *ngIf="(form.get('shs')).errors?.['required']">Senior Highschool is required</small>
+        <!--question mark(?) is a safe navigation operator-->
+        <small *ngIf="(form.get('shs')).errors?.['minlength']">Please enter more than 4 character</small>
+      <ion-input formControlName="track" type="text" label="Track" label-placement="floating" fill="outline" placeholder="Enter your Track" ></ion-input>
+        <!-- Error Message -->
+          <small *ngIf="form.get('track').invalid && (form.get('track').dirty ||form.get('track').touched )"></small>
+          <small *ngIf="(form.get('track')).errors?.['required']">Track is required</small>
+      <ion-input formControlName="yearGraduated" type="text" label="Year Graduated" label-placement="floating" fill="outline" placeholder="Enter your Year" ></ion-input>
+        <!-- Error Message -->
+          <small *ngIf="form.get('yearGraduated').invalid && (form.get('yearGraduated').dirty ||form.get('track').touched )"></small>
+          <small *ngIf="(form.get('yearGraduated')).errors?.['required']">Track is required</small>
+      <ion-input formControlName="college" type="text" label="College" label-placement="floating" fill="outline" placeholder="Enter your University" ></ion-input>
+      <!-- Error Message -->
+          <small *ngIf="form.get('college').invalid && (form.get('college').dirty ||form.get('college').touched )">School University is required</small>
+          <small *ngIf="(form.get('college')).errors?.['required']">School University is required</small>
+      <ion-input formControlName="course" type="text" label="Course" label-placement="floating" fill="outline" placeholder="Enter your Course"></ion-input>
+      <!-- Error Message -->
+          <small *ngIf="form.get('course').invalid && (form.get('course').dirty ||form.get('course').touched )">Course is required</small>
+      <ion-input formControlName="department" type="text" label="Department" label-placement="floating" fill="outline" placeholder="Enter your Department"></ion-input>
+      <!-- Error Message -->
+        <small *ngIf="form.get('department').invalid && (form.get('department').dirty ||form.get('department').touched )">Department is required</small>
+      <ion-input formControlName="schoolAddress" type="text" label="School Address" label-placement="floating" fill="outline" placeholder="Enter your School Address"></ion-input>
+      <!-- Error Message -->
+        <small *ngIf="form.get('schoolAddress').invalid && (form.get('schoolAddress').dirty ||form.get('schoolAddress').touched )">School Address is required</small>
+      </form>
     </ion-list>
     <ion-button expand="full" (click)="goToPreviousStep()">Back</ion-button>
-    <ion-button expand="full" (click)="goToNextStep()">Next</ion-button>
-  </ion-card>
+    <ion-button expand="full" (click)="goToNextStep()" [disabled]="!form.valid">Submit</ion-button>
+</ion-card>
 

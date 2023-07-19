@@ -1,0 +1,12 @@
+<ion-card >
+  <!-- Profile Details -->
+  <ion-list>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+    <ion-input formControlName="fullname" type="text"   label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
+    <ion-input formControlName="email" type="email" label="Email" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
+    <ion-input formControlName="newPassword" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
+    <ion-input formControlName="confirmPassword" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your New Password"></ion-input>
+  </form>
+  </ion-list>
+  <ion-button expand="full" (click)="submit" (click)="goToNextStep()">Update</ion-button>
+</ion-card>

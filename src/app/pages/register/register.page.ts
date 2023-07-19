@@ -12,10 +12,10 @@ export class RegisterPage implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      name: [null, [Validators.required, Validators.minLength(5)]],
-      hid: [null, [Validators.required]],
+      name: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(30)]],
+      hid: [null, [Validators.required , Validators.minLength(5), Validators.maxLength(17)]],
       email: [null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      password: [null, [Validators.required, Validators.minLength(6)]],
+      password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(30)]],
       confirmPassword: [null, [Validators.required]],
     });
   }

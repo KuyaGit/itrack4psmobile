@@ -4,22 +4,47 @@
       <h2>Personal Details</h2>
     </ion-card-title>
   </ion-card-header>
-    <!-- Login Form -->
+    <!-- Personal Details -->
+  <form [formGroup]="form" (ngSubmit)="saveDetails()">
     <ion-list>
-      <ion-input type="text" [(ngModel)]="formData.name"  label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
+      <ion-input formControlName="name" type="text"  label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
+        <small *ngIf="form.get('name').invalid && (form.get('name').dirty ||form.get('name').touched )">
+          <small *ngIf="(form.get('name')).errors?.['required']">Name is required</small>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="(form.get('name')).errors?.['minlength']">Please enter more than 4 character</small>
+        </small>
+      <div class="birthgender">
+        <ion-input type="date" formControlName="dob" label="Birthdate" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
+        <ion-select formControlName="gender" placeholder="Gender">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+        </ion-select>
+      </div>
     </ion-list>
-    <div class="birthgender">
-      <ion-input type="date" [(ngModel)]="formData.datebirth" label="Birthdate" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
-      <ion-select [(ngModel)]="formData.gender" placeholder="Gender">
-        <ion-select-option value="Male">Male</ion-select-option>
-        <ion-select-option value="Female">Female</ion-select-option>
-      </ion-select>
-    </div>
     <ion-list>
-      <ion-input [(ngModel)]="formData.email" type="email" label="Email" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
-      <ion-input [(ngModel)]="formData.address" type="text" label="Address" label-placement="floating" fill="outline" placeholder="Enter your Address"></ion-input>
-      <ion-input [(ngModel)]="formData.fName" type="text" label="Father's Name" label-placement="floating" fill="outline" placeholder="Enter your Father's Name"></ion-input>
-      <ion-input [(ngModel)]="formData.mName" type="text" label="Mother's Name" label-placement="floating" fill="outline" placeholder="Enter your Mother's Name"></ion-input>
-    </ion-list>
-    <ion-button expand="full" (click)="goToNextStep()">Next</ion-button>
+      <ion-input formControlName="email" type="email" label="Email" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
+        <!-- Error Message -->
+        <div *ngIf="(form.get('email').invalid && (form.get('email')).touched) || (form.get('email')).dirty">
+          <small *ngIf="(form.get('email')).errors?.['required']">Email is required</small>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="(form.get('email')).errors?.['pattern']">Please provide a valid email address</small>
+        </div>
+        <ion-input formControlName="address" type="text" label="Address" label-placement="floating" fill="outline" placeholder="Enter your Address"></ion-input>
+        <ion-input formControlName="fName" type="text" label="Father's Name" label-placement="floating" fill="outline" placeholder="Enter your Father's Name"></ion-input>
+
+          <small *ngIf="form.get('fName').invalid && (form.get('fName').dirty ||form.get('name').touched )">
+            <small *ngIf="(form.get('fName')).errors?.['required']">Father's Name is required</small>
+            <!--question mark(?) is a safe navigation operator-->
+            <small *ngIf="(form.get('fName')).errors?.['minlength']">Please enter more than 4 character</small>
+          </small>
+
+        <ion-input formControlName="mName" type="text" label="Mother's Name" label-placement="floating" fill="outline" placeholder="Enter your Mother's Name"></ion-input>
+        <small *ngIf="form.get('mName').invalid && (form.get('fName').dirty ||form.get('name').touched )">
+          <small *ngIf="(form.get('mName')).errors?.['required']">Mother's Name is required</small>
+          <!--question mark(?) is a safe navigation operator-->
+          <small *ngIf="(form.get('mName')).errors?.['minlength']">Please enter more than 4 character</small>
+        </small>
+      </ion-list>
+    </form>
+    <ion-button expand="full" (click)="goToNextStep()" [disabled]="!form.valid">Next</ion-button>
   </ion-card>

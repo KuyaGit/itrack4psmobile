@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-beneficiary-form',
   templateUrl: './beneficiary-form.page.html',
@@ -22,10 +22,7 @@ export class BeneficiaryFormPage implements OnInit {
     this.formData = formData;
     this.currentStep = 3;
   }
-  goToStep4(formData: any) {
-    this.formData = formData;
-    this.currentStep = 4;
-  }
+  form : FormGroup;
 
   constructor() { }
 

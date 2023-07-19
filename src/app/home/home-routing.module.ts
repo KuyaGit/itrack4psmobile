@@ -21,7 +21,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home/beneficiary/form',
     pathMatch: 'full'
-  }
+  },
+
 ]
 
 @NgModule({

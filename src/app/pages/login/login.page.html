@@ -13,22 +13,27 @@
       <!-- Login Form -->
 
       <ion-list >
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <form [formGroup]="loginForm" (ngSubmit)="saveDetails()">
         <!-- Email Form -->
         <ion-input formControlName="email" type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
+        <!-- Error Message -->
         <div *ngIf="(loginForm.get('email').invalid && (loginForm.get('email')).touched) || (loginForm.get('email')).dirty">
           <small *ngIf="(loginForm.get('email')).errors?.['required']">Email is required</small>
           <!--question mark(?) is a safe navigation operator-->
           <small *ngIf="(loginForm.get('email')).errors?.['pattern']">Please provide a valid email address</small>
         </div>
           <ion-input formControlName="password" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
-        <ion-text>
+          <!-- Error Message -->
+          <small *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty ||loginForm.get('password').touched )">
+            Password is required.
+          </small>
+          <ion-text>
           <a routerLink="/forgot">Forgot Password?</a>
         </ion-text>
       </form>
       </ion-list>
 
-      <ion-button expand="block" routerLink="/home" [disabled]="!loginForm.valid" type="submit">Login</ion-button>
+      <ion-button expand="block" routerLink="/home" [disabled]="!loginForm.valid" type="submit" (click)="saveDetails()">Login</ion-button>
 
       <ion-label class="sign-up">
         Don’t have an account?  <a routerLink="/register"> Sign Up</a>

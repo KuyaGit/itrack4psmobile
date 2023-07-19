@@ -9,14 +9,33 @@
       <ion-label>
       Let’s login for explore continues
       </ion-label>
+      <form [formGroup]="form" (ngSubmit)="saveDetails()">
       <!-- Login Form -->
-      <ion-list>
-        <ion-input type="text" label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
-        <ion-input type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
-        <ion-input type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
-        <ion-input type="text" label="Household ID" label-placement="floating" fill="outline" placeholder="Enter your Household"></ion-input>
-      </ion-list>
-      <ion-button expand="block" routerLink="/login">Create</ion-button>
+        <ion-list>
+          <ion-input formControlName="name" type="text" label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
+          <!-- Error Message -->
+            <small *ngIf="form.get('name').invalid && (form.get('name').dirty ||form.get('name').touched )">Name is required</small>
+            <small *ngIf="(form.get('name')).errors?.['minlength']">Please enter more than 4 character</small>
+          <ion-input formControlName="email" type="email" label="Email Address" label-placement="floating" fill="outline" placeholder="Enter your Email Address"></ion-input>
+          <!-- Error Message -->
+            <small *ngIf="form.get('email').invalid && (form.get('email').dirty ||form.get('email').touched )">
+              Email is required.
+            </small>
+            <small *ngIf="(form.get('email')).errors?.['pattern']">Please provide a valid email address</small>
+          <ion-input formControlName="password" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
+          <!-- Error Message -->
+            <small *ngIf="form.get('password').invalid && (form.get('password').dirty ||form.get('password').touched )">
+              Password is required.
+            </small>
+            <small *ngIf="(form.get('password')).errors?.['minlength']">Please enter more than 6 character</small>
+          <ion-input formControlName="hid" type="text" label="Household ID" label-placement="floating" fill="outline" placeholder="Enter your Household"></ion-input>
+            <!-- Error message -->
+            <small *ngIf="form.get('hid').invalid && (form.get('hid').dirty ||form.get('hid').touched )">
+              Household ID is required.</small>
+            <small *ngIf="(form.get('hid')).errors?.['minlength']">Please enter more than 6 character</small>
+        </ion-list>
+      </form>
+      <ion-button expand="block" routerLink="/login" (click)="saveDetails()">Create</ion-button>
       <ion-label class="sign-up">
         Already have an account?  <a routerLink="/login"> Login Here</a>
       </ion-label>

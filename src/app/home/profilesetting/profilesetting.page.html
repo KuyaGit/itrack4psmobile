@@ -1,5 +1,4 @@
 
-
 <ion-buttons slot="start" color="primary">
   <ion-menu-button></ion-menu-button>
 
@@ -10,15 +9,9 @@
   <ion-title>
     <h1>Profile Setting</h1>
   </ion-title>
-  <ion-card>
-      <!-- Profile Details -->
-      <ion-list>
-        <ion-input type="text" [(ngModel)]="formData.name"  label="Full Name" label-placement="floating" fill="outline" placeholder="Enter your Full Name"></ion-input>
-        <ion-input [(ngModel)]="formData.email" type="email" label="Email" label-placement="floating" fill="outline" placeholder="Enter your Email"></ion-input>
-        <ion-input [(ngModel)]="formData.fName" type="password" label="Password" label-placement="floating" fill="outline" placeholder="Enter your Password"></ion-input>
-        <ion-input [(ngModel)]="formData.mName" type="password" label="Mother's Name" label-placement="floating" fill="outline" placeholder="Enter your New Password"></ion-input>
-      </ion-list>
-      <ion-button expand="full" (click)="submit">Update</ion-button>
-    </ion-card>
+  <ng-container [ngSwitch]="currentStep">
+    <app-updateform *ngSwitchCase="1" (nextStep)="goToStep2($event)"></app-updateform>
+    <app-updatesucccess *ngSwitchCase="2"  (previousStep)="goToStep1()"></app-updatesucccess>
+  </ng-container>
 </ion-content>
 
